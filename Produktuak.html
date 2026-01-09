@@ -134,8 +134,11 @@
     <script>
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
-        ctx.fillStyle = "#FF0000";
-        ctx.fillRect(20, 20, 150, 100);
+        ctx.beginPath();
+        ctx.arc(100, 50, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "#4CAF50";
+        ctx.fill();
+        ctx.stroke();
     </script>
 
     <script src="Produktuak.js"></script>
