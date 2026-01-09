@@ -27,17 +27,14 @@
 
 <body>
     <header class="header">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" onclick="toggleMenu()">
             menu
         </span>
         <div class="linkak">
-
-
             <a href="Finantziazioa.html">Finantziazioa</a>
             <a href="Konfigurazioa.html">Konfigurazioa</a>
             <a href="KotxeElektrikoak.html">Kotxe Elektrikoak </a>
             <a href="Produktuak.html">Produktuak</a>
-
         </div>
         <img src="img/skoda_logo.png">
     </header>
@@ -87,6 +84,15 @@
             </div>
         </div>
     </footer>
+    <div id="mugikor-menua" class="mugikor-menua">
+        <span class="itxi-botoia" onclick="toggleMenu()">&times;</span>
+        <a href="OrrialdeNagusia.html">Orrialde Nagusia</a>
+        <a href="Finantziazioa.html">Finantziazioa</a>
+        <a href="Konfigurazioa.html">Konfigurazioa</a>
+        <a href="KotxeElektrikoak.html">Kotxe Elektrikoak</a>
+        <a href="Produktuak.html">Produktuak</a>
+    </div>
+    <script src="Header.js"></script>
 </body>
 
 </html>
