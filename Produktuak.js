@@ -27,6 +27,41 @@ const products = [
         img: "img/skoda_alfombrilla.png",
         category: 'interior',
         type: 'osagarria'
+    },
+    {
+        productName: "Bizikleta Euskarria",
+        price: 150,
+        img: "img/skoda_portabicis.png",
+        category: 'garraioa',
+        type: 'osagarria'
+    },
+    {
+        productName: "Haurrentzako Eserlekua",
+        price: 350,
+        img: "img/skoda_silla_infantil.png",
+        category: 'interior',
+        type: 'osagarria'
+    },
+    {
+        productName: "Maletero Sarea",
+        price: 45,
+        img: "img/skoda_red_maletero.png",
+        category: 'interior',
+        type: 'osagarria'
+    },
+    {
+        productName: "Teilatu Barrak",
+        price: 180,
+        img: "img/skoda_barras.png",
+        category: 'garraioa',
+        type: 'osagarria'
+    },
+    {
+        productName: "Garbiketa Kita",
+        price: 35,
+        img: "img/skoda_limpieza.png",
+        category: 'mantenimendua',
+        type: 'osagarria'
     }
 ];
 
