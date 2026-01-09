@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MenaHiru - Produktuak</title>
+    <link rel="stylesheet" href="Header_Footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Spice&family=Lora:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        .eduki-nagusia {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .filtroak {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filtro-botoia {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            background-color: transparent;
+            color: #333;
+            cursor: pointer;
+            font-family: 'Oxanium', sans-serif;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .filtro-botoia:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        .produktuak-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card styles are injected by JS but standardizing here helps too if JS fails initially */
+        .card-products {
+            font-family: 'Oxanium', sans-serif !important;
+            /* Override JS default font if needed */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+        <div class="linkak">
+            <a href="OrrialdeNagusia.html">Orrialde Nagusia</a>
+            <a href="Finantziazioa.html">Finantziazioa</a>
+            <a href="Konfigurazioa.html">Konfigurazioa</a>
+            <a href="KotxeElektrikoak.html">Kotxe Elektrikoak </a>
+            <a href="Produktuak.html">Produktuak</a>
+        </div>
+        <img src="img/skoda_logo.png">
+    </header>
+    <main class="eduki-nagusia">
+        <h1 style="text-align: center;">Gure Produktuak</h1>
+        <p style="text-align: center; margin-bottom: 2rem;">Ikusi gure kotxe eta osagarri guztiak.</p>
+
+        <!-- 
+        <div class="filtroak">
+            <button class="filtro-botoia" id="denakBtn">Denak</button>
+            <button class="filtro-botoia" id="kotxeakBtn">Kotxeak</button>
+            <button class="filtro-botoia" id="elektrikoaBtn">Elektrikoak</button>
+            <button class="filtro-botoia" id="osagarriakBtn">Osagarriak</button>
+        </div>
+        -->
+
+        <div id="shopContent" class="produktuak-grid">
+            <!-- JS will populate this -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-edukia">
+            <div class="footer-goikoa">
+                <div class="kontaktua">
+                    <img src="img/mugikorra.png" alt="Mugikorra">
+                    <span>800 500 103</span>
+                </div>
+                <div class="kontaktua">
+                    <img src="img/emaila.png" alt="Emaila">
+                    <span>menaHiruAtencionAlCliente@skoda.es</span>
+                </div>
+                <div class="kontaktua">
+                    <img src="img/mugikorra.png" alt="WhatsApp">
+                    <span>34638680103</span>
+                </div>
+                <div class="sare-sozialak">
+                    <a href="https://www.facebook.com/skoda.menabi"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/skoda.menabi"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://x.com/skoda_es"><img src="img/x.png" alt="X"></a>
+                    <a href="https://www.youtube.com/@SkodaSpain"><img src="img/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.tiktok.com/@skoda_es"><img src="img/tiktok.png" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="banatzailea"></div>
+            <div class="estekak">
+                <a href="AurkituGaitzazu.html">Aurkitu gaitzazu</a>
+                <a href="Cookie.html">Cookieak</a>
+                <a href="Pribatutasuna.html">Pribatutasun Politika</a>
+                <a href="OharLegala.html">Lege Oharra</a>
+            </div>
+        </div>
+    </footer>
+
+    <div style="text-align: center; margin-top: 2rem;">
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            Zure nabigatzaileak ez du canvas-a onartzen.
+        </canvas>
+    </div>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(20, 20, 150, 100);
+    </script>
+
+    <script src="Produktuak.js"></script>
+</body>
+
+</html>
