@@ -4,15 +4,15 @@
     align-items: center;
     padding: 0 2rem;
     background-color: #f4f4f4;
-
+    flex-wrap: wrap;
 }
 
 .linkak a {
     text-decoration: none;
     color: black;
-    padding: 3rem;
+    padding: 1rem;
     font-family: 'Oxanium', sans-serif;
-    font-size: 2rem;
+    font-size: 1.1rem;
 }
 
 .linkak a:hover {
