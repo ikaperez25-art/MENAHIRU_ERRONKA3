@@ -69,7 +69,7 @@ const displayProducts = (productsToShow) => {
         <img src="${product.img}" alt="${product.productName}" style="width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px;">
         <h3>${product.productName}</h3>
         <p class="price">${product.price.toLocaleString()} €</p>
-        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; margin-top: auto;">Konfiguratu</button>
+        <button onclick="aukeratuKotxea('${product.productName}', ${product.price}, '${product.img}')" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; margin-top: auto;">Konfiguratu</button>
       `;
         div.style.display = "flex";
         div.style.flexDirection = "column";
@@ -78,6 +78,11 @@ const displayProducts = (productsToShow) => {
         div.style.height = "350px";
         shopContent.append(div);
     });
+};
+
+const aukeratuKotxea = (izena, prezioa, irudia) => {
+    localStorage.setItem('aukeratutakoKotxea', JSON.stringify({ izena, prezioa, irudia }));
+    window.location.href = 'Finantziazioa.html';
 };
 
 const filterProducts = (category) => {
@@ -110,6 +115,5 @@ hibridoaBtn.addEventListener('click', () => {
 denakBtn.addEventListener('click', () => {
     displayProducts(products);
 });
-
 
 displayProducts(products);

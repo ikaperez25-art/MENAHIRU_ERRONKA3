@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MenaHiru - Finantziazioa</title>
+    <link rel="stylesheet" href="Header_Footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Spice&family=Lora:ital,wght@0,400..700;1,400..700&family=Oxanium:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        .eduki-nagusia {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .autatutako-autoa {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3rem;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .autatutako-autoa img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .finantziazio-aukerak {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .finantziazio-txartela {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 350px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .finantziazio-txartela h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .finantziazio-formularioa {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .finantziazio-formularioa label {
+            font-weight: bold;
+        }
+
+        .finantziazio-formularioa input,
+        .finantziazio-formularioa select {
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .emaitza {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+        <div class="linkak">
+            <a href="OrrialdeNagusia.html">Orrialde Nagusia</a>
+            <a href="Finantziazioa.html">Finantziazioa</a>
+            <a href="Konfigurazioa.html">Konfigurazioa</a>
+            <a href="KotxeElektrikoak.html">Kotxe Elektrikoak </a>
+            <a href="Produktuak.html">Produktuak</a>
+        </div>
+        <img src="img/skoda_logo.png">
+    </header>
+    <main class="eduki-nagusia">
+        <h1 style="text-align: center;">Kalkulatu zure Finantziazioa</h1>
+
+        <div class="autatutako-autoa" id="autoInfoAtala">
+            <h2 id="autoIzena">Aukeratu kotxe bat Konfigurazioa atalean</h2>
+            <img id="autoIrudia" src="img/skoda_logo.png" alt="Kotxea">
+            <h3 id="autoPrezioa">0 €</h3>
+        </div>
+
+        <div class="finantziazio-aukerak">
+            <div class="finantziazio-txartela">
+                <h2>Finantziazio Estandarra</h2>
+                <p style="text-align: center; font-size: 0.9rem; color: #666;">Interes finkoa 48 hilabetera arte.</p>
+                <div class="finantziazio-formularioa">
+                    <label>Kotxearen Prezioa (€)</label>
+                    <input type="number" id="prezioa1" readonly>
+
+                    <label>Sarrera (€)</label>
+                    <input type="number" id="sarrera1" placeholder="0" oninput="kalkulatuEstandarra()">
+
+                    <label>Epea</label>
+                    <select id="hilabeteak1" onchange="kalkulatuEstandarra()">
+                        <option value="24">24 hilabete</option>
+                        <option value="36">36 hilabete</option>
+                        <option value="48" selected>48 hilabete</option>
+                        <option value="60">60 hilabete</option>
+                    </select>
+
+                    <div class="emaitza" id="emaitza1">0.00 € / hil</div>
+                    <button onclick="alert('Zure finantziazio estandarra onartu da. Eskerrik asko erosteagatik!')"
+                        style="background-color: #333; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem;">Erosi</button>
+                </div>
+            </div>
+
+            <div class="finantziazio-txartela">
+                <h2>Finantziazio Malgua</h2>
+                <p style="text-align: center; font-size: 0.9rem; color: #666;">Interes baxuagoa, epe laburragoa.</p>
+                <div class="finantziazio-formularioa">
+                    <label>Kotxearen Prezioa (€)</label>
+                    <input type="number" id="prezioa2" readonly>
+
+                    <label>Sarrera (€)</label>
+                    <input type="number" id="sarrera2" placeholder="0" oninput="kalkulatuMalgua()">
+
+                    <label>Epea</label>
+                    <select id="hilabeteak2" onchange="kalkulatuMalgua()">
+                        <option value="12">12 hilabete</option>
+                        <option value="24" selected>24 hilabete</option>
+                        <option value="36">36 hilabete</option>
+                    </select>
+
+                    <div class="emaitza" id="emaitza2">0.00 € / hil</div>
+                    <button onclick="alert('Zure finantziazio malgua onartu da. Eskerrik asko erosteagatik!')"
+                        style="background-color: #333; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem;">Erosi</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-edukia">
+            <div class="footer-goikoa">
+                <div class="kontaktua">
+                    <img src="img/mugikorra.png" alt="Mugikorra">
+                    <span>800 500 103</span>
+                </div>
+                <div class="kontaktua">
+                    <img src="img/emaila.png" alt="Emaila">
+                    <span>menaHiruAtencionAlCliente@skoda.es</span>
+                </div>
+                <div class="kontaktua">
+                    <img src="img/mugikorra.png" alt="WhatsApp">
+                    <span>34638680103</span>
+                </div>
+                <div class="sare-sozialak">
+                    <a href="https://www.facebook.com/skoda.menabi"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/skoda.menabi"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://x.com/skoda_es"><img src="img/x.png" alt="X"></a>
+                    <a href="https://www.youtube.com/@SkodaSpain"><img src="img/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.tiktok.com/@skoda_es"><img src="img/tiktok.png" alt="TikTok"></a>
+                </div>
+            </div>
+            <div class="banatzailea"></div>
+            <div class="estekak">
+                <a href="AurkituGaitzazu.html">Aurkitu gaitzazu</a>
+                <a href="Cookie.html">Cookieak</a>
+                <a href="Pribatutasuna.html">Pribatutasun Politika</a>
+                <a href="OharLegala.html">Lege Oharra</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gordetakoKotxea = localStorage.getItem('aukeratutakoKotxea');
+
+            if (gordetakoKotxea) {
+                const kotxea = JSON.parse(gordetakoKotxea);
+                document.getElementById('autoIzena').innerText = kotxea.izena;
+                document.getElementById('autoIrudia').src = kotxea.irudia;
+                document.getElementById('autoPrezioa').innerText = kotxea.prezioa.toLocaleString() + ' €';
+
+                document.getElementById('prezioa1').value = kotxea.prezioa;
+                document.getElementById('prezioa2').value = kotxea.prezioa;
+
+                kalkulatuEstandarra();
+                kalkulatuMalgua();
+            }
+        });
+
+        function kalkulatuEstandarra() {
+            const prezioa = parseFloat(document.getElementById('prezioa1').value) || 0;
+            const sarrera = parseFloat(document.getElementById('sarrera1').value) || 0;
+            const hilabeteak = parseInt(document.getElementById('hilabeteak1').value);
+
+            const zenbatekoa = prezioa - sarrera;
+            if (zenbatekoa > 0) {
+                const totala = zenbatekoa * 1.05;
+                const hilekoa = totala / hilabeteak;
+                document.getElementById('emaitza1').innerText = hilekoa.toFixed(2) + ' € / hil';
+            } else {
+                document.getElementById('emaitza1').innerText = '0.00 € / hil';
+            }
+        }
+
+        function kalkulatuMalgua() {
+            const prezioa = parseFloat(document.getElementById('prezioa2').value) || 0;
+            const sarrera = parseFloat(document.getElementById('sarrera2').value) || 0;
+            const hilabeteak = parseInt(document.getElementById('hilabeteak2').value);
+
+            const zenbatekoa = prezioa - sarrera;
+            if (zenbatekoa > 0) {
+                const totala = zenbatekoa * 1.03;
+                const hilekoa = totala / hilabeteak;
+                document.getElementById('emaitza2').innerText = hilekoa.toFixed(2) + ' € / hil';
+            } else {
+                document.getElementById('emaitza2').innerText = '0.00 € / hil';
+            }
+        }
+    </script>
+</body>
+
+</html>
