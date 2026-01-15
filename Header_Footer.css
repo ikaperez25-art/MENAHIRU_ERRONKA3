@@ -29,8 +29,8 @@
 }
 
 .header img {
-    height: 80px;
-    width: auto;
+    height: 200px;
+    width: 200px;
     object-fit: contain;
     mix-blend-mode: multiply;
 }
