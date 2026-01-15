@@ -17,6 +17,22 @@ public class Produktua {
         this.kategoriaNagusia = kategoriaNagusia;
         this.bigarrenMailakoKategoria = new ArrayList<>();
         this.atributuak = new HashMap<>();
+    }
 
+    public String getEan13() {
+        return ean13;
+    }
+
+    public String getIzena() {
+        return izena;
+    }
+
+    public Kategoria getKategoriaNagusia() {
+        return kategoriaNagusia;
+    }
+
+    // toString metodoa objektua testu bezala ikusteko balio du
+    public String toString() {
+        return izena + " (" + ean13 + ")";
     }
 }
