@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MenaHiru - Finantziazioa</title>
-    <meta name="description" content="MenaHiru Skoda finantziazioa. Kalkulatu zure kotxe berriaren finantziazioa.">
+    <title>MenaHiru - Saskia</title>
+    <meta name="description"
+        content="MenaHiru Skoda kontzesionarioan zure kotxea erosi. Skoda kotxe berriak eta bigarren eskukoak.">
     <meta name="author" content="Ares Perez Jimenez">
     <link rel="stylesheet" href="Header_Footer.css">
     <link rel="stylesheet" href="Formularioak.css">
@@ -22,6 +23,7 @@
         <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
         <div class="linkak">
             <a href="OrrialdeNagusia.html">Orrialde Nagusia</a>
+            <a href="Finantziazioa.html">Finantziazioa</a>
             <a href="Konfigurazioa.html">Konfigurazioa</a>
             <a href="KotxeElektrikoak.html">Kotxe Elektrikoak</a>
             <a href="Saskia.html"><span class="material-symbols-outlined">shopping_cart</span></a>
@@ -30,12 +32,12 @@
     </header>
 
     <main class="eduki-nagusia">
-        <h1 style="text-align: center;">Mena Hiru - Finantziazioa</h1>
-        <p style="text-align: center; color: #666;">Mena Hiru Skoda kontzesionarioan finantziazioa eskaintzeko prest
-            gaude.</p>
+        <h1 style="text-align: center;">Mena Hiru - Saskia</h1>
+        <p style="text-align: center; color: #666;">Ongi etorri Mena Hiru Skoda kontzesionariora. Erosi zure kotxea
+            hemen!</p>
 
         <div class="formularioa">
-            <h2>Kalkulatu zure finantziazioa Mena Hiru-n</h2>
+            <h2>Bete formularioa kotxea erosteko Mena Hiru-n</h2>
 
             <form action="#" method="post">
                 <div class="form-group">
@@ -54,18 +56,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sarrera">Hasierako sarrera (€):</label>
-                    <input type="number" id="sarrera" name="sarrera" placeholder="0" min="0">
-                </div>
-
-                <div class="form-group">
-                    <label for="epea">Ordainketa epea:</label>
-                    <select id="epea" name="epea" required>
-                        <option value="12">12 hilabete</option>
-                        <option value="24">24 hilabete</option>
-                        <option value="36">36 hilabete</option>
-                        <option value="48" selected>48 hilabete</option>
-                        <option value="60">60 hilabete</option>
+                    <label for="akabera">Aukeratu akabera:</label>
+                    <select id="akabera" name="akabera" required>
+                        <option value="Oinarrizkoa - 0">Oinarrizkoa (+ 0 €)</option>
+                        <option value="Ambition - 1500">Ambition (+ 1.500 €)</option>
+                        <option value="Style - 3000">Style (+ 3.000 €)</option>
+                        <option value="Premium - 5000">Premium (+ 5.000 €)</option>
+                        <option value="Sportline - 6000">Sportline (+ 6.000 €)</option>
+                        <option value="L&K - 8000">L&K Luxus (+ 8.000 €)</option>
                     </select>
                 </div>
 
@@ -89,7 +87,19 @@
                     <input type="tel" id="telefonoa" name="telefonoa" placeholder="600 000 000" required>
                 </div>
 
-                <button type="submit" class="btn-bidali">Finantziazioa eskatu</button>
+                <div class="form-group">
+                    <label for="helbidea">Helbidea:</label>
+                    <input type="text" id="helbidea" name="helbidea" placeholder="Kalea, zenbakia, hiria" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="oharrak">Oharrak (aukerakoa):</label>
+                    <textarea id="oharrak" name="oharrak" rows="3"
+                        placeholder="Zerbait gehitu nahi baduzu..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-bidali" onclick="alert('Erosketa burututa da!')">Erosketa
+                    bidali</button>
             </form>
         </div>
     </main>

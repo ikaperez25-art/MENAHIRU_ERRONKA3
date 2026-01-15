@@ -4,7 +4,9 @@
     align-items: center;
     padding: 0 2rem;
     background-color: #f4f4f4;
-    flex-wrap: wrap;
+    height: 100px;
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 
 .linkak a {
@@ -20,9 +22,16 @@
     border-radius: 10px;
 }
 
+.linkak a .material-symbols-outlined {
+    padding: 0;
+    vertical-align: bottom;
+    font-size: 1.4rem;
+}
+
 .header img {
-    height: 120px;
-    width: 120px;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
     mix-blend-mode: multiply;
 }
 
