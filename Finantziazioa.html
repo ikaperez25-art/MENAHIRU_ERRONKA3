@@ -34,7 +34,41 @@
         <p style="text-align: center; color: #666;">Mena Hiru Skoda kontzesionarioan finantziazioa eskaintzeko prest
             gaude.</p>
 
-        <div class="formularioa">
+        <div class="formularioa" style="margin-bottom: 2rem;">
+            <h2 style="color: #2e7d32; text-align: center;">Plan Ekonomikoa (Merkeagoa!)</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">Aukera hau zuretzat merkeena da. Interes baxuagoak eta
+                baldintza hobeak.</p>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="kotxea-eko">Aukeratu zure modeloa:</label>
+                    <select id="kotxea-eko" name="kotxea" required>
+                        <option value="">-- Aukeratu --</option>
+                        <option value="Fabia">Skoda Fabia (Ekonomikoa)</option>
+                        <option value="Kamiq">Skoda Kamiq (Hirikoa)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sarrera-eko">Sarrera (€):</label>
+                    <input type="number" id="sarrera-eko" name="sarrera" placeholder="Minimoa: 3000€">
+                </div>
+
+                <div class="form-group">
+                    <label for="epea-eko">Hilabeteak:</label>
+                    <select id="epea-eko" name="epea" required>
+                        <option value="36">36 hilabete</option>
+                        <option value="48">48 hilabete</option>
+                        <option value="60">60 hilabete</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-bidali" style="background-color: #2e7d32;">Kalkulatu Plan
+                    Merkea</button>
+            </form>
+        </div>
+
+        <div class="formularioa" id="formularioa">
             <h2>Kalkulatu zure finantziazioa Mena Hiru-n</h2>
 
             <form action="#" method="post">
