@@ -1,10 +1,15 @@
+/**
+ * Apalategi bat da. Gelaxka asko ditu barruan.
+ * 
+ * @author Ikaperez25
+ */
 public class Apalategia {
     private int id;
-    // Matrizea (Array bidimentsionala) gelaxkak kudeatzeko
-    // Matriz (Array bidimensional) para gestionar las celdas
-    // Al segundo [] columnas
     private Gelaxka[][] matrizea;
 
+    /**
+     * Apalategi berria sortzeko. Lerroak eta zutabeak behar dira.
+     */
     public Apalategia(int id, int ilarak, int zutabeak) {
         this.id = id;
         this.matrizea = new Gelaxka[ilarak][zutabeak];
@@ -16,9 +21,10 @@ public class Apalategia {
         }
     }
 
+    /**
+     * Gelaxka zehatz bat lortzeko.
+     */
     public Gelaxka lortuGelaxka(int ilara, int zutabea) {
-        // Control de seguridad: asegurar que no pedimos fuera de los límites.
-        // Ej: si tiene 5 filas, no podemos pedir la 8.
         if (ilara >= 0 && ilara < matrizea.length && zutabea >= 0 && zutabea < matrizea[0].length) {
             return matrizea[ilara][zutabea];
         }

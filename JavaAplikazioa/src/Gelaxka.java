@@ -1,16 +1,26 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Apalategiko kaxa bat da. Hemen gordetzen dira produktuak.
+ * 
+ * @author Ikaperez25
+ */
 public class Gelaxka {
-    // Map bat erabiltzen dugu: Gakoa (Produktua) -> Balioa (Kantitatea)
     private Map<Produktua, Integer> inbentarioa;
     private boolean beteta;
 
+    /**
+     * Kaxa huts bat sortzen du.
+     */
     public Gelaxka() {
         this.inbentarioa = new HashMap<>();
         this.beteta = false;
     }
 
+    /**
+     * Gauzak kaxan sartzeko.
+     */
     public void sartuProduktua(Produktua p, int kantitatea) {
         if (beteta) {
             System.out.println("Errorea: Gelaxka beteta dago.");
@@ -25,6 +35,9 @@ public class Gelaxka {
         }
     }
 
+    /**
+     * Gauzak kaxatik ateratzeko.
+     */
     public void ateraProduktua(Produktua p, int kantitatea) {
         if (!inbentarioa.containsKey(p)) {
             System.out.println("Errorea: Produktua ez dago hemen.");
@@ -34,32 +47,41 @@ public class Gelaxka {
         int dagoenKantitatea = inbentarioa.get(p);
 
         if (kantitatea >= dagoenKantitatea) {
-            // Dena edo gehiago atera nahi badugu, produktua ezabatu mapatik
             inbentarioa.remove(p);
         } else {
-            // Bestela, kantitatea eguneratu
             inbentarioa.put(p, dagoenKantitatea - kantitatea);
         }
     }
 
+    /**
+     * Zer dagoen ikusteko.
+     */
     public Map<Produktua, Integer> getInbentarioa() {
         return inbentarioa;
     }
 
+    /**
+     * Beteta dagoen jakiteko.
+     */
     public boolean isBeteta() {
         return beteta;
     }
 
+    /**
+     * Beteta dagoen ala ez aldatzeko.
+     */
     public void setBeteta(boolean beteta) {
         this.beteta = beteta;
     }
 
-    // Hau "imprimitzeko" metodoa da, System.out.println(gelaxka) egitean
+    /**
+     * Kaxaren edukia testu bezala erakusteko.
+     */
     public String toString() {
         if (inbentarioa.isEmpty()) {
             return "Hutsik";
         }
-        // Maparen edukia testu bihurtzen du
+
         return inbentarioa.toString();
     }
 }

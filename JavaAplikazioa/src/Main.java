@@ -4,11 +4,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Programa nagusia. Hemen hasten da dena.
+ * 
+ * @author Ikaperez25
+ */
 public class Main {
     private static List<Apalategia> biltegia = new ArrayList<>();
     private static Map<String, Produktua> katalogoa = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Programaren hasiera.
+     */
     public static void main(String[] args) {
         hasieratuBiltegia();
         hasieratuKatalogoa();
@@ -17,7 +25,7 @@ public class Main {
         while (!irten) {
             erakutsiMenua();
             int aukera = scanner.nextInt();
-            scanner.nextLine(); // Hustu bufferra
+            scanner.nextLine();
 
             switch (aukera) {
                 case 1:
@@ -41,14 +49,20 @@ public class Main {
         }
     }
 
+    /**
+     * Biltegia prestatzeko.
+     */
     private static void hasieratuBiltegia() {
         for (int i = 1; i <= 25; i++) {
-            // new Apalategia(id, filas, columnas)
+
             biltegia.add(new Apalategia(i, 5, 6));
         }
         System.out.println("Biltegia hasieratuta: 25 apalategi.");
     }
 
+    /**
+     * Produktuak eta taldeak sortzeko.
+     */
     private static void hasieratuKatalogoa() {
         Kategoria arropa = new Kategoria("Arropa", null);
         Kategoria kamiseta = new Kategoria("Kamiseta", arropa);
@@ -60,6 +74,9 @@ public class Main {
         katalogoa.put(p2.getEan13(), p2);
     }
 
+    /**
+     * Aukerak erakusteko.
+     */
     private static void erakutsiMenua() {
         System.out.println("\n--- BILTEGI KUDEAKETA ---");
         System.out.println("1. Produktua sartu");
@@ -70,6 +87,9 @@ public class Main {
         System.out.print("Aukeratu: ");
     }
 
+    /**
+     * Gauza bat apalategian sartzeko.
+     */
     private static void produktuBatSartu() {
         System.out.print("Sartu produktuaren EAN kodea (11111 edo 22222): ");
         String ean = scanner.nextLine();
@@ -89,7 +109,6 @@ public class Main {
         System.out.print("Kantitatea: ");
         int kantitatea = scanner.nextInt();
 
-        // 1-etik hasten gara baina List 0-tik hasten da
         if (apalaId < 1 || apalaId > biltegia.size()) {
             System.out.println("Apalategi okerra.");
             return;
@@ -106,11 +125,17 @@ public class Main {
         }
     }
 
+    /**
+     * Gauza bat apalategitik ateratzeko.
+     */
     private static void produktuBatAtera() {
-        // Antzeko logika baina 'ateraProduktua' deituz
+
         System.out.println("Funtzionalitate hau inplementatzeke dago oraindik.");
     }
 
+    /**
+     * Kaxa batean zer dagoen ikusteko.
+     */
     private static void gelaxkaKontsultatu() {
         System.out.print("Sartu Apalategi ID (1-25): ");
         int apalaId = scanner.nextInt();
@@ -127,6 +152,9 @@ public class Main {
         }
     }
 
+    /**
+     * Biltegi osoan zer dagoen ikusteko.
+     */
     private static void inbentarioaIkusi() {
         for (Apalategia a : biltegia) {
             for (int i = 0; i < a.getIlarak(); i++) {
