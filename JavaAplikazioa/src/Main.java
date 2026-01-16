@@ -10,9 +10,10 @@ import java.util.Scanner;
  * @author Ikaperez25
  */
 public class Main {
-    private static List<Apalategia> biltegia = new ArrayList<>();
-    private static Map<String, Produktua> katalogoa = new HashMap<>();
-    private static Scanner scanner = new Scanner(System.in);
+    public static List<Apalategia> biltegia = new ArrayList<>();
+    public static Map<String, Produktua> katalogoa = new HashMap<>();
+    public static Scanner scanner = new Scanner(System.in);
+    public static int aukera; // Testetarako public
 
     /**
      * Programaren hasiera.
@@ -24,7 +25,7 @@ public class Main {
         boolean irten = false;
         while (!irten) {
             erakutsiMenua();
-            int aukera = scanner.nextInt();
+            aukera = scanner.nextInt();
             scanner.nextLine();
 
             switch (aukera) {
@@ -52,7 +53,7 @@ public class Main {
     /**
      * Biltegia prestatzeko.
      */
-    private static void hasieratuBiltegia() {
+    public static void hasieratuBiltegia() {
         for (int i = 1; i <= 25; i++) {
 
             biltegia.add(new Apalategia(i, 5, 6));
@@ -63,7 +64,7 @@ public class Main {
     /**
      * Produktuak eta taldeak sortzeko.
      */
-    private static void hasieratuKatalogoa() {
+    public static void hasieratuKatalogoa() {
         Kategoria arropa = new Kategoria("Arropa", null);
         Kategoria kamiseta = new Kategoria("Kamiseta", arropa);
 
@@ -77,7 +78,7 @@ public class Main {
     /**
      * Aukerak erakusteko.
      */
-    private static void erakutsiMenua() {
+    public static void erakutsiMenua() {
         System.out.println("\n--- BILTEGI KUDEAKETA ---");
         System.out.println("1. Produktua sartu");
         System.out.println("2. Produktua atera");
@@ -90,7 +91,7 @@ public class Main {
     /**
      * Gauza bat apalategian sartzeko.
      */
-    private static void produktuBatSartu() {
+    public static void produktuBatSartu() {
         System.out.print("Sartu produktuaren EAN kodea (11111 edo 22222): ");
         String ean = scanner.nextLine();
         Produktua p = katalogoa.get(ean);
@@ -128,7 +129,7 @@ public class Main {
     /**
      * Gauza bat apalategitik ateratzeko.
      */
-    private static void produktuBatAtera() {
+    public static void produktuBatAtera() {
 
         System.out.println("Funtzionalitate hau inplementatzeke dago oraindik.");
     }
@@ -136,7 +137,7 @@ public class Main {
     /**
      * Kaxa batean zer dagoen ikusteko.
      */
-    private static void gelaxkaKontsultatu() {
+    public static void gelaxkaKontsultatu() {
         System.out.print("Sartu Apalategi ID (1-25): ");
         int apalaId = scanner.nextInt();
         System.out.print("Sartu Ilara: ");
@@ -155,7 +156,7 @@ public class Main {
     /**
      * Biltegi osoan zer dagoen ikusteko.
      */
-    private static void inbentarioaIkusi() {
+    public static void inbentarioaIkusi() {
         for (Apalategia a : biltegia) {
             for (int i = 0; i < a.getIlarak(); i++) {
                 for (int j = 0; j < a.getZutabeak(); j++) {
